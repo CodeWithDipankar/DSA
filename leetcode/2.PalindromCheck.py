@@ -1,4 +1,4 @@
-Given an integer x, return true if x is a 
+'''Given an integer x, return true if x is a 
 palindrome
 , and false otherwise.
 
@@ -29,7 +29,7 @@ Constraints:
 Follow up: Could you solve it without converting the integer to a string?
 
 
-Answer:
+Answer:'''
 
 class Solution(object):
     def isPalindrome(self, x):
