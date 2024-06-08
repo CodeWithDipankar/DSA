@@ -45,7 +45,7 @@ class Solution(object):
 
 
 a = Solution()
-print(a.isPalindrom(123)
+print(a.isPalindrom(123))
 
 
 '''
@@ -70,4 +70,4 @@ def is_palindrome(x: int) -> bool:
 
 if __name__ == "__main__":
     number = 123
-    print(f"The number {number} is palindrom ? Answer:-> {is_palindrom(number)}")
+    print(f"The number {number} is palindrom ? Answer:-> {is_palindrome(number)}")
