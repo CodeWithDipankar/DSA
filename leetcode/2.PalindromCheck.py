@@ -46,3 +46,28 @@ class Solution(object):
 
 a = Solution()
 print(a.isPalindrom(123)
+
+
+'''
+Another approach is without converting it to string ---
+
+Answer:
+'''
+def is_palindrome(x: int) -> bool:
+    # Negative numbers and numbers ending with 0 but not 0 itself are not palindromes
+    if x < 0 or (x % 10 == 0 and x != 0):
+        return False
+
+    reversed_number = 0
+    original_number = x
+
+    while x > 0:
+        digit = x % 10
+        reversed_number = reversed_number * 10 + digit
+        x //= 10 #initialized the number after dividing the number with 10
+
+    return original_number == reversed_number
+
+if __name__ == "__main__":
+    number = 123
+    print(f"The number {number} is palindrom ? Answer:-> {is_palindrom(number)}")
