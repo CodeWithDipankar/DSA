@@ -44,3 +44,14 @@ def finder(nums,target):
 nums = [3,2,4]
 target = 6
 print(finder(nums,target))
+
+#TimeComplexity - O(n^2)
+def finder(nums,target):
+    for i in range(len(nums)):
+        for j in range(i + 1, len(nums)):
+            if nums[j] == target - nums[i]:
+                return [i, j]
+            
+nums = [3,2,4]
+target = 6
+print(finder(nums,target))
