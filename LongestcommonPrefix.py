@@ -74,6 +74,27 @@ class Solution(object):
         else:
             return strs[0]
 
+
+#Best approach in leetcode
+
+class Solution(object):
+    def longestCommonPrefix(self, strs):
+        """
+        :type strs: List[str]
+        :rtype: str
+        """
+        strs = sorted(strs)
+        first = strs[0]
+        last = strs[-1]
+        ans = ""
+        for i in range(min(len(first),len(last))):
+            if first[i] != last[i]:
+                return ans
+            ans+=first[i]
+            
+        return ans
+
+
 a = Solution()
 strs = ["a","ac"] #["flower","flow","flight"] #["","b"] #["dog","racecar","car"] #["cows","cow","co","cowes"]
 print(a.longestCommonPrefix(strs))
