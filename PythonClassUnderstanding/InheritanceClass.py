@@ -17,12 +17,14 @@ class Student(Person):
     ''' if we define child class __init__ then parent class __init__ inheritance will not work so for that we can do that this way '''
     
     def __init__(self,fname,lname):
+        
         Person.__init__(self,fname,lname)
         ''' we can modify the function here also'''
-        self.age = 10
+        self.fname = "Sachin"
+        
+        
 
 # taking an instance of the class
-
 #taking normal class 
 Astudent = Student("Dipankar","Mandal")
 Astudent.printClass()
