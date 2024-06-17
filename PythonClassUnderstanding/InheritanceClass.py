@@ -21,8 +21,6 @@ class Student(Person):
         ''' we can modify the function here also'''
         self.age = 10
 
-    # Person.add_item("Gender","M")
-
 # taking an instance of the class
 
 #taking normal class 
@@ -32,4 +30,8 @@ Astudent.printClass()
 Astudent.add_item("DOB","05-04-1998")
 Astudent.printClass()
 
+Astudent.add_item("Gender","M")
+Astudent.printClass()
 
+Astudent.add_item("age","10")
+Astudent.printClass()
