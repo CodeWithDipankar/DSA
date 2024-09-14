@@ -28,22 +28,24 @@ Answer:
 
 class Solution:
     def mySqrt(self, x: int) -> int:
-        if x<2:
+        if x < 2:
             return x
 
         low = 2
-        high = x//2
+        high = x // 2
 
-        while low<=high:
-            mid = low + (high - low)//2
+        while low <= high:
+            mid = low + (high - low) // 2
 
-            if mid == x//mid :
+            if mid * mid == x:
                 return mid
-            elif mid > x//mid:
-                high = mid - 1
-            elif mid < x//mid:
+            elif mid * mid < x:
                 low = mid + 1
+            else:
+                high = mid - 1
 
-        return low
+        return high
+
+# Test the function
 A = Solution()
-print(A.mySqrt(10))
+print(A.mySqrt(8))  # Output should be 3
