@@ -28,15 +28,22 @@ Answer:
 
 class Solution:
     def mySqrt(self, x: int) -> int:
-        _list = [i for i in range(0, x+1)]
-        # need to do binary search for getting the result
-        low = 0
-        high = len(_list)-1
+        if x<2:
+            return x
 
-        mid = low + (high-low) //2
+        low = 2
+        high = x//2
 
-        if _list[mid] * _list[mid] ==
+        while low<=high:
+            mid = low + (high - low)//2
 
+            if mid == x//mid :
+                return mid
+            elif mid > x//mid:
+                high = mid - 1
+            elif mid < x//mid:
+                low = mid + 1
 
+        return low
 A = Solution()
-A.mySqrt()
+print(A.mySqrt(10))
