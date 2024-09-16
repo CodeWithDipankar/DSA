@@ -78,25 +78,24 @@ path is a valid absolute Unix path.
 
 Answer:
 '''
-
+# runtime -44ms
+import re
 class Solution:
     def simplifyPath(self, path: str) -> str:
         canonicalPath = []
         if path[0] == "/":
-            path = path.replace("//","/").replace("///","/")
+            path = re.sub(r"/+","/",path)
             splitArray = path.split("/")
 
             for index, item in enumerate(splitArray):
-                if index != len(splitArray)-1:
-                        if item == '' and index == 0:
-                            canonicalPath.append("/")
-                        elif item == "." and len(canonicalPath)!= 1:
-                            pass
-                        elif item == "..":
-                            if len(canonicalPath)!= 1 : canonicalPath.pop()
-                        else:
-                           canonicalPath.append(item)
-                elif item != "":
+                # if index != len(splitArray)-1:
+                if item == '':
+                    if index != len(splitArray)-1 : canonicalPath.append("/")
+                elif item == ".":
+                    pass
+                elif item == "..":
+                    if len(canonicalPath)!= 1 : canonicalPath.pop()
+                else:
                     canonicalPath.append(item)
 
         returnpath = ''
@@ -107,5 +106,21 @@ class Solution:
                 returnpath+= item
         return  returnpath
 
+
+'''optimize code'''
+# runtime -39ms
+# class Solution:
+#     def simplifyPath(self, path: str) -> str:
+#         canonicalPath = []
+#         splitArray = path.split("/")
+
+#         for index, item in enumerate(splitArray):
+#             if item != '' and item != ".":
+#                 if item == "..":
+#                     if canonicalPath: canonicalPath.pop()
+#                 else:
+#                     canonicalPath.append(item)
+#         return "/"+"/".join(canonicalPath)
+
 A = Solution()
-print(A.simplifyPath("/home/user/Documents/../Pictures"))
+print(A.simplifyPath("/home/"))
