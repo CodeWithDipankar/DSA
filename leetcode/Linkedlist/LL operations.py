@@ -63,6 +63,18 @@ class LinkedListOperation:
                         new_node.next = current.next
                         current.next = new_node
 
+    def FindNode(self,nodevalue= None):
+        if nodevalue is not None:
+            if self.head is not None:
+                pass
+            else:
+                print("No node found.")
+        else:
+            value = input("Please enter the search node:")
+            self.FindNode(value)
+
+
+
 # Test the class
 NodeOperation = LinkedListOperation()
 # Test the case where the list is empty and insertion is called
@@ -76,3 +88,6 @@ NodeOperation.InsertionAtAnyPos()  # Insert at the end
 NodeOperation.PrintLL()
 NodeOperation.InsertionAtAnyPos(3)  # Insert at position 3
 NodeOperation.PrintLL()
+
+
+#travershal
