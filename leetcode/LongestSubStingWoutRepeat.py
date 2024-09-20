@@ -30,25 +30,28 @@ class Solution:
         if len(s) == 1:
             return len(s)
         else:
-            for item in s:
-                if len(stack)<1:
-                    stack.append(item)
-                else:
-                    if item in stack:
-                        stack.append(",")
-                    stack.append(item)
+            # for item in s:
+            #     if len(stack)<1:
+            #         stack.append(item)
+            #     else:
+            #         if item in stack:
+            #             stack.append(",")
+            #         stack.append(item)
 
-            #loop through the stack for longest sting---
-            allStr = ""
-            for i in stack:
-                allStr+=i
-            allStrarr = allStr.split(",")
+            # #loop through the stack for longest sting---
+            # allStr = ""
+            # for i in stack:
+            #     allStr+=i
+            # allStrarr = allStr.split(",")
 
-            lasthighest = 0
-            for item in allStrarr:
-                if len(item)>lasthighest:
-                    lasthighest = len(item)
-            return lasthighest
+            # lasthighest = 0
+            # for item in allStrarr:
+            #     if len(item)>lasthighest:
+            #         lasthighest = len(item)
+            # return lasthighest
+
+            for i in range(len(s)):
+                if
 
 
 
