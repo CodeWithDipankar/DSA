@@ -26,37 +26,18 @@ Answer:
 
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
-        stack = []
-        if len(s) == 1:
-            return len(s)
-        else:
-            # for item in s:
-            #     if len(stack)<1:
-            #         stack.append(item)
-            #     else:
-            #         if item in stack:
-            #             stack.append(",")
-            #         stack.append(item)
+        maxlen = 0
+        l = 0
+        setStack = set()
+        for r in range(len(s)):
+            while l<r and s[r] in setStack:
+                setStack.remove(s[l])
+                l+=1
+            
+            setStack.add(s[r])
+            maxlen = max(maxlen, r-l+1)
 
-            # #loop through the stack for longest sting---
-            # allStr = ""
-            # for i in stack:
-            #     allStr+=i
-            # allStrarr = allStr.split(",")
-
-            # lasthighest = 0
-            # for item in allStrarr:
-            #     if len(item)>lasthighest:
-            #         lasthighest = len(item)
-            # return lasthighest
-
-            maxlen = 0
-            l = 0
-            setStack = set()
-            for i in range(len(s)):
-                print(i)
-                
-
+        return maxlen
 
 
 
