@@ -50,8 +50,14 @@ class Solution:
             #         lasthighest = len(item)
             # return lasthighest
 
+            maxlen = 0
+            l = 0
+            setStack = set()
             for i in range(len(s)):
-                if
+                print(i)
+                
+
+
 
 
 
