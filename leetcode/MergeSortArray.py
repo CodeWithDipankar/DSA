@@ -36,8 +36,36 @@ from typing import List
 
 class Solution:
     def merge(self, nums1: List[int], m: int, nums2: List[int], n: int) -> None:
+        iL1max = m-1
+        iL2max = n-1
+
+        iL1Last = len(nums1)-1
+        print(nums1)
+        while (iL2max>=0):
+            # print(iL2max,iL1max,iL1max)
+            if nums2[iL2max]>nums1[iL1max]:
+                nums1[iL1Last] = nums2[iL2max]
+                iL1Last -= 1
+            else:
+                while(nums1[iL1max]>= nums2[iL2max] and iL1Last != 0):
+                    if iL1max != -1:
+                        nums1[iL1Last] = nums1[iL1max]
+                        iL1max -= 1
+                        iL1Last -=1
+                    else:
+                        break
+                nums1[iL1Last] = nums2[iL2max]
+                iL1Last -= 1
+            iL2max -= 1
+        print(nums1)
+
 
 
 
 a = Solution()
 a.merge(nums1 = [1,2,3,0,0,0], m = 3, nums2 = [2,5,6], n = 3)
+# a.merge(nums1 = [4,5,6,0,0,0], m = 3, nums2 = [1,2,3], n = 3)
+
+
+
+
