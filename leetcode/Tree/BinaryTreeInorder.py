@@ -44,6 +44,13 @@ class TreeNode:
         self.left = left
         self.right = right
 
+class BinaryTree:
+    def __init__(self):
+        self.root = None
+
+    def MakeBinaryTree(self):
+
+
 class Solution(object):
     def inorderTraversal(self, root):
         """
