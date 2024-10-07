@@ -48,7 +48,17 @@ class BinaryTree:
     def __init__(self):
         self.root = None
 
-    def MakeBinaryTree(self):
+    def MakeBinaryTree(self,value):
+        if self.root is None:
+            self.root = TreeNode(value)
+        else:
+            sel
+
+
+    def BuildBinaryTree(self,values:list):
+        for value in values:
+            self.MakeBinaryTree(value)
+
 
 
 class Solution(object):
